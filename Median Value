@@ -1,0 +1,8 @@
+L <- 20  # Lower boundary of median class
+F <- 950 # Cumulative frequency before median class
+f <- 1500 # Frequency of median class
+h <- 30 # Class width
+N <- 3194 # Total frequency
+
+median_value <- L + ((N/2 - F) / f) * h
+print(median_value)
