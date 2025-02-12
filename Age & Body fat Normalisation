@@ -1,0 +1,15 @@
+age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 54, 56, 57, 58, 58, 60, 61)
+value <- 35
+sd_age <- 12.94  # Given standard deviation
+
+# (i) Min-max normalization
+min_max_norm <- (value - min(age)) / (max(age) - min(age))
+
+# (ii) Z-score normalization
+z_score_norm <- (value - mean(age)) / sd_age
+
+# (iii) Decimal scaling normalization
+decimal_scaling_norm <- value / 10^ceiling(log10(max(age)))
+
+# Print results
+print(list(min_max_norm, z_score_norm, decimal_scaling_norm))
