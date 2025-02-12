@@ -1,0 +1,10 @@
+inned_data)]
+
+print(list(
+  mean = mean(ages), median = median(ages), mode = as.numeric(names(sort(table(ages), decreasing = TRUE)[1])),
+  midrange = (min(ages) + max(ages)) / 2, Q1 = quantile(ages, 0.25), Q3 = quantile(ages, 0.75),
+  min_max_norm = (data - min(data)) / (max(data) - min(data)), z_score_norm = (data - mean(data)) / sd(data),
+  smoothed_mean = smooth(mean), smoothed_median = smooth(median),
+  smoothed_boundaries = mapply(function(x, min_val, max_val) ifelse(abs(x - min_val) < abs(x - max_val), min_val, max_val), 
+                               binned_data, smooth(min), smooth(max))
+))
