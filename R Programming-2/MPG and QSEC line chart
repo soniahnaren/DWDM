@@ -1,0 +1,5 @@
+data(mtcars)
+plot(mtcars$mpg, type = "l", col = "blue", ylim = range(mtcars[, c("mpg", "qsec")]), 
+     ylab = "Values", xlab = "Index", main = "MPG and QSEC Line Chart")
+lines(mtcars$qsec, col = "red")
+legend("topright", legend = c("MPG", "QSEC"), col = c("blue", "red"), lty = 1)
