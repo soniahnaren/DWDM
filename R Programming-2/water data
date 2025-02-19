@@ -1,0 +1,26 @@
+# Load dataset
+water_data <- read.csv("water.csv")
+
+# View first few rows
+head(water_data)
+
+# Scatter plot (base R)
+plot(water_data$hardness, water_data$mortality, 
+     main="Mortality vs Hardness", 
+     xlab="Hardness", 
+     ylab="Mortality", 
+     col="blue", pch=16)
+
+# Fit linear regression model
+model <- lm(mortality ~ hardness, data = water_data)
+
+# Add regression line to the plot
+abline(model, col="red")
+
+# View model summary
+summary(model)
+
+# Predict mortality for hardness = 88
+new_data <- data.frame(hardness = 88)
+predicted_mortality <- predict(model, new_data)
+print(paste("Predicted mortality for hardness = 88:", predicted_mortality))
